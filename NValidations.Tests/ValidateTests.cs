@@ -33,7 +33,7 @@ namespace NValidations.Tests
 
             action.Should()
                 .ThrowExactly<ArgumentNullException>()
-                .WithMessage($"Value cannot be null. (Parameter '{argumentName}')");
+                .WithMessage($"*{argumentName}*");
         }
 
         [Test]
