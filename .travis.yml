@@ -1,0 +1,17 @@
+language: bash
+solution: NValidations.sln
+os: windows
+install:
+  - choco install nuget.commandline
+  - nuget restore NValidations.sln
+script:
+  - dotnet.exe build -c Release
+  - dotnet.exe test -c Release NValidations.Tests/NValidations.Tests.csproj
+  - nuget pack -properties Configuration=Release NValidations/
+deploy:
+  provider: releases
+  api_key: $API_KEY
+  file: NValidations.$TRAVIS_TAG.nupkg
+  skip_cleanup: true
+  on:
+    tags: true
