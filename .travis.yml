@@ -9,9 +9,15 @@ script:
   - dotnet.exe test -c Release NValidations.Tests/NValidations.Tests.csproj
   - nuget pack -properties Configuration=Release NValidations/
 deploy:
-  provider: releases
-  api_key: $API_KEY
-  file: NValidations.$TRAVIS_TAG.nupkg
-  skip_cleanup: true
-  on:
-    tags: true
+  - provider: releases
+    skip_cleanup: true
+    api_key: $GITHUB_KEY
+    file: NValidations.$TRAVIS_TAG.nupkg
+    on:
+      tags: true
+  - provider:
+    skip_cleanup: true
+    script:
+      - nuget publish ./NValidations.$TRAVIS_TAG.nupkg -ApiKey $NUGET_ORG_KEY
+    on:
+      tags: true
