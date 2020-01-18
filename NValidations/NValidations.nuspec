@@ -12,7 +12,4 @@
     <releaseNotes>Initial release.</releaseNotes>
     <copyright>$copyright$</copyright>
   </metadata>
-  <files>
-    <file src="readme.txt" target="" />
-  </files>
 </package>
