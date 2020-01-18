@@ -12,12 +12,12 @@ deploy:
   - provider: releases
     skip_cleanup: true
     api_key: $GITHUB_KEY
-    file: NValidations.$TRAVIS_TAG.nupkg
+    file: Vraiment.NValidations.$TRAVIS_TAG.nupkg
     on:
       tags: true
   - provider: script
     skip_cleanup: true
     script:
-      - nuget push ./NValidations.$TRAVIS_TAG.nupkg -ApiKey $NUGET_ORG_KEY
+      - nuget push ./Vraiment.NValidations.$TRAVIS_TAG.nupkg -ApiKey $NUGET_ORG_KEY
     on:
       tags: true
