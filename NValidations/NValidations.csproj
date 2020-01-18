@@ -6,6 +6,7 @@
     <Authors>Vraiment</Authors>
     <AssemblyVersion>0.1</AssemblyVersion>
     <Version>0.1</Version>
+    <AssemblyName>Vraiment.NValidations</AssemblyName>
   </PropertyGroup>
 
 </Project>
