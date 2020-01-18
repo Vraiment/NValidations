@@ -15,7 +15,7 @@ deploy:
     file: NValidations.$TRAVIS_TAG.nupkg
     on:
       tags: true
-  - provider:
+  - provider: script
     skip_cleanup: true
     script:
       - nuget publish ./NValidations.$TRAVIS_TAG.nupkg -ApiKey $NUGET_ORG_KEY
