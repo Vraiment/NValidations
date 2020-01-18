@@ -18,6 +18,6 @@ deploy:
   - provider: script
     skip_cleanup: true
     script:
-      - nuget publish ./NValidations.$TRAVIS_TAG.nupkg -ApiKey $NUGET_ORG_KEY
+      - nuget push ./NValidations.$TRAVIS_TAG.nupkg -ApiKey $NUGET_ORG_KEY
     on:
       tags: true
